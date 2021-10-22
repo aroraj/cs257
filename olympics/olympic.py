@@ -1,5 +1,10 @@
 '''
+Jayti Arora
+CS257: Software Design
+October 21, 2021
+'''
 
+'''
 Prints a usage statement for "python3 olympics.py -h" (or --help). 
 You may use argparse or not for command-line parsing and usage statement printing.
 
