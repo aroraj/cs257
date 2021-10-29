@@ -7,13 +7,18 @@ October 21, 2021
 --Table with athletes and their corresponding ids
 CREATE TABLE athletes (
   id INTEGER,
-  name TEXT
+  name TEXT,
+  sex TEXT,
+  age TEXT,
+  height TEXT,
+  weight TEXT
 );
 
 --Table with events and their corresponding ids
 CREATE TABLE events (
   id INTEGER,
-  name TEXT
+  name TEXT,
+  sport TEXT
 );
 
 --Table with teams and their corresponding ids

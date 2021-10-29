@@ -17,9 +17,13 @@ heading_row = next(reader) # eat up and ignore the heading row of the data file
 for row in reader:
     athlete_id = row[0]
     athlete_name = row[1]
+    athlete_sex = row[2]
+    athlete_age = row[3]
+    athlete_height = row[4]
+    athlete_weight = row[5]
     if athlete_id not in athletes:
         athletes[athlete_id] = athlete_name
-        writer.writerow([athlete_id, athlete_name])
+        writer.writerow([athlete_id, athlete_name, athlete_sex, athlete_age, athlete_height, athlete_weight])
 original_data_file.close()
 athletes_file.close()
 
@@ -33,10 +37,11 @@ writer = csv.writer(events_file)
 heading_row = next(reader) # eat up and ignore the heading row of the data file
 for row in reader:
     event_name = row[13]
+    sport_name = row[12]
     if event_name not in events:
         event_id = len(events) + 1
         events[event_name] = event_id
-        writer.writerow([event_id, event_name])
+        writer.writerow([event_id, event_name, sport_name])
 events_file.close()
 
 # (3) Create a dictionary that maps team_name -> team_id
@@ -93,7 +98,7 @@ original_data_file.close()
 # (6) Create a dictionary that maps noc -> noc_id
 #       and then saves noc, region, notes, and id in noc_data.csv
 noc_regions = {}
-noc_info_file = open('noc_regions.csv', 'rU')
+noc_info_file = open('noc_regions.csv')
 reader = csv.reader(noc_info_file)
 noc_file = open('noc_data.csv', 'w')
 writer = csv.writer(noc_file)
